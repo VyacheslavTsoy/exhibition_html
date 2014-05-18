@@ -13,25 +13,6 @@ $(function(){
 	};
 	
 	scaleFix();
-	// Menu Android
-	if(window.orientation!=undefined){
-    var regM = /ipod|ipad|iphone/gi,
-     result = ua.match(regM)
-    if(!result) {
-     $('.sf-menu li').each(function(){
-      if($(">ul", this)[0]){
-       $(">a", this).toggle(
-        function(){
-         return false;
-        },
-        function(){
-         window.location.href = $(this).attr("href");
-        }
-       );
-      } 
-     })
-    }
-   } 
 });
 var ua=navigator.userAgent.toLocaleLowerCase(),
  regV = /ipod|ipad|iphone/gi,
@@ -59,12 +40,15 @@ var owl = $('.owl-carousel'); // save reference to variable
 
   $(function() {
     $("body").append("<div id='preloader'></div>");
+    
     owl.owlCarousel({
       items:1,
       loop:true,
       center:true,
       margin:false,
-      dotData:true
+      dotData:true,
+      URLhashListener:true,
+      startPosition: 'URLHash'
     });
 
     $(".menu_link").on("click", function(){
@@ -72,7 +56,7 @@ var owl = $('.owl-carousel'); // save reference to variable
       $(this).parent().addClass("current");
     })
 
-    $(".thumb_link").on("click", function(){
+    $(".thumb_link, .popup_link").on("click", function(){
       var openModal = $(this).data("modal");
       if(openModal){
         $(openModal).arcticmodal({

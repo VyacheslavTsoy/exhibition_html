@@ -678,6 +678,7 @@ header {
     cursor: pointer;
     border: 1px solid transparent;
     opacity: .65;
+    position: relative;
   }
     .tugs_thumb:hover,
     .tugs_thumb.active{
@@ -790,6 +791,34 @@ header {
   .video_popup_inner{
     padding: 50px;
   }
+
+#register_tug{
+  width: 690px;
+}
+  .register_tug_inner{
+    padding: 34px;
+  }
+    [class^="register_tug_col"]{
+      width: 48%;
+    }
+    .register_tug_col2{
+      padding-left: 4%;
+    }
+
+.form_select{
+  width: 100%;
+  height: 32px;
+  outline: none;
+}
+
+.reg_trial_icon{
+  width: 32px;
+  height: 32px;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background: url(../images/reg_trial_icon.png) 0 0 no-repeat;
+}
 /*=====================> Page 4 ========================*/
 
 .contact_page_inner{
@@ -816,7 +845,7 @@ header {
 .height_mid .owl-dots{
   margin-top: -125px;
 }
-.height_mid #contact_form textarea{
+.height_mid .form textarea{
   height: 90px;
 }
 .height_mid .contact_page_inner{
@@ -974,11 +1003,11 @@ a:hover,
 
 
 /*================================>> Contact Form <<========================================*/
-#contact_form {
+.form{
   padding:0px 0 0 0;
   position: relative;
 }
-#contact_form .success
+.form .success
 {
   display: block;
   position: absolute;
@@ -991,7 +1020,7 @@ a:hover,
   text-align: center;
   padding: 20px 0;
 }
-#contact_form textarea, #contact_form input[type="text"]{
+.form textarea, .form input[type="text"]{
   margin:0;
   font-size:14px;
   border:1px solid #b1b1b1;
@@ -1007,16 +1036,16 @@ a:hover,
   width: 100%;
 }
 
-#contact_form textarea {
+.form textarea {
   overflow:auto;
   height:142px;
   resize:none;
   margin: 0 0 0 0;
 }
-#contact_form sup{
+.form sup{
   color: #f86301;
 }
-.contact_form_row{
+.form_row{
   padding-bottom: 22px;
   margin-bottom: 4px;
 }
@@ -1028,7 +1057,7 @@ a:hover,
   left: 0;
 }
   
-#contact_form label {
+.form label {
   display:block;
   position: relative;
   overflow:hidden;
